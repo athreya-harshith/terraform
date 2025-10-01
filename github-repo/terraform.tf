@@ -9,12 +9,13 @@ resource "github_repository" "tf-github-repo" {
   auto_init   = true
 }
 
-resource "github_repository" "tf-github-repo-b" {
-  name        = "test-repo-from-tf-b"
-  description = "This is a test repository created by terraform"
-  visibility  = "public"
-  auto_init   = true
-}
+# commented after running terraform destroy -target github_repository.tf-github-repo-b command
+# resource "github_repository" "tf-github-repo-b" {
+#   name        = "test-repo-from-tf-b"
+#   description = "This is a test repository created by terraform"
+#   visibility  = "public"
+#   auto_init   = true
+# }
 
 /*
 Should run terraform init first else it will give this if terraform plan is done
